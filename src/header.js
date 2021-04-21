@@ -5,7 +5,7 @@ import {getStyle, getOpt} from './styles';
 export default class Header extends Component {
 
   render() {
-    let {title, onPress, children} = this.props;
+    let {onPress, children} = this.props;
     let {header_styles} = getStyle();
 
     let platform_styles = Platform.OS === 'ios' ? header_styles.header_ios: header_styles.header_android;

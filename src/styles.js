@@ -7,10 +7,22 @@ export function getStyle() {
   return current_style;
 }
 
-export function getOpt() {
-  return OPTIONS;
+export function setStyle(style) {
+  current_style = Object.assign({}, buildStyle(), style);
 }
 
+
+export function getOpt() {
+  if (!current_options) {
+    current_options = buildOptions();
+  }
+  return current_options;
+}
+
+
+export function setOpt(new_options) {
+  current_options = Object.assign({}, buildOptions(), new_options);
+}
 
 var current_style;
 var current_options;
@@ -19,34 +31,36 @@ export const  GREEN = "#16B242";
 export const PRIMARY = "#ff5252";
 export const BLUE = "#26547C"
 
-const OPTIONS = {
-  text_sizes: {
-    gigant: 55,
-    xxlarge: 31,
-    xlarge: 21,
-    large: 18,
-    default: 14,
-    small: 12,
-    mini: 9
-  },
+function buildOptions() {
+  return {
+    text_sizes: {
+      gigant: 55,
+      xxlarge: 31,
+      xlarge: 21,
+      large: 18,
+      default: 14,
+      small: 12,
+      mini: 9
+    },
 
-  colors: {
-    primary: "#ff5252",
-    light: "#FFA0A0",
-    bright: "#EC2A2A",
-    secondary: BLUE,
-    black: "#000",
-    white: "#fff",
-    gray_1: "#3e3e3e",
-    gray_2: "#707070",
-    gray_3: "#9e9e9e",
-    gray_4: "#D8D4D4",
-    gray_5: "#E8E8E8",
-    gray_6: "#EBEBEB",
-    gray_7: "#EEEEEE",
-    text: "#707070",
-    green: GREEN,
-    red: PRIMARY
+    colors: {
+      primary: "#ff5252",
+      light: "#FFA0A0",
+      bright: "#EC2A2A",
+      secondary: BLUE,
+      black: "#000",
+      white: "#fff",
+      gray_1: "#3e3e3e",
+      gray_2: "#707070",
+      gray_3: "#9e9e9e",
+      gray_4: "#D8D4D4",
+      gray_5: "#E8E8E8",
+      gray_6: "#EBEBEB",
+      gray_7: "#EEEEEE",
+      text: "#707070",
+      green: GREEN,
+      red: PRIMARY
+    }
   }
 }
 
