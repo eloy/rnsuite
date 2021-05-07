@@ -33,7 +33,7 @@ export class TextInput extends Component {
 
     return (
       <View>
-        <ReactNative.TextInput underlineColorAndroid='transparent' {...props} style={custom_style} ref={el => this.input = el}></ReactNative.TextInput>
+        <ReactNative.TextInput underlineColorAndroid='transparent' {...props}  style={custom_style} ref={el => this.input = el}></ReactNative.TextInput>
       </View>
     );
 
@@ -59,16 +59,32 @@ export class PasswordInput extends Component {
 
   render() {
     let {showPassword} = this.state;
-    let {colors} = getOpt();
+    let {name, value, placeholder, autoFocus, style, onChange, editable} = this.props;
+
+
+    let props = {name, value, placeholder, autoFocus, editable};
+
+    if (onChange) {
+      props.onChangeText = text => onChange({target: {name, value: text}})
+    }
+
     let {text_input_styles} = getStyle();
-    let props = this.props;
+    let {colors} = getOpt();
+
+    let custom_style = [text_input_styles.input, {paddingBottom: 5}]
+    if (style) {
+      custom_style.push(style);
+    }
+
+    let show_password_label = props.showPasswordLabel || 'Show Password';
+
     return (
       <View>
-        <Label>{props.label}</Label>
-        <ReactNative.TextInput underlineColorAndroid='transparent' secureTextEntry={!showPassword}  autoCapitalize="none" style={[text_input_styles.input, {paddingBottom: 5}]} placeholderTextColor={colors.gray_4} {...props} ref={el => this.input = el}></ReactNative.TextInput>
+        <ReactNative.TextInput underlineColorAndroid='transparent' {...props} secureTextEntry={!showPassword}  autoCapitalize="none" style={custom_style} placeholderTextColor={colors.gray_4}  ref={el => this.input = el}></ReactNative.TextInput>
+
         <TouchableOpacity style={text_input_styles.checkBoxcontainer} onPress={this.toggleSecure}>
           <Checkbox value={showPassword} onChange={this.toggleSecure} />
-          <Text style={text_input_styles.showPasswordText}>{I18n.t("show_password")}</Text>
+          <Text style={text_input_styles.showPasswordText}>{show_password_label}</Text>
         </TouchableOpacity>
       </View>
     );
