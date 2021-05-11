@@ -19,17 +19,9 @@ export default class Checkbox extends Component {
 
 
   renderIcon() {
-    let size, style;
-    if(Platform.OS === 'ios') {
-      size = 12;
-      style = {};
-    } else {
-      size = 12;
-      style = {};
-    }
-
+    let size = 12;
     if (this.props.value) {
-      return <Icon name="check" size={size} />
+      return <Icon name="check-square" size={size} />
     } else {
       return null;
     }
