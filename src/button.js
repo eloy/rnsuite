@@ -39,6 +39,8 @@ export class Button extends Component {
       textStyle.push(btn_styles.light_text);
     } else if (mini) {
       textStyle.push(btn_styles.mini_text);
+    } else {
+      textStyle.push(btn_styles.text);
     }
 
     if (accent) {
