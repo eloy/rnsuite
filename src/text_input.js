@@ -15,10 +15,10 @@ export class TextInput extends Component {
   }
   render() {
 
-    let {name, value, label, placeholder, autoFocus, autoCorrect, secureTextEntry, keyboardType, autoCapitalize, onChangeText,style, onSubmitEditing, onChange, editable} = this.props;
+    let {name, value, label, placeholder, autoFocus, autoCorrect, secureTextEntry, keyboardType, autoCapitalize, onChangeText,style, onSubmitEditing, onChange, editable, multiline, numberOfLines} = this.props;
     let {text_input_styles} = getStyle();
 
-    let props = {name, value, label, placeholder, autoFocus, autoCorrect, secureTextEntry, keyboardType, autoCapitalize, onChangeText,style, onSubmitEditing, editable};
+    let props = {name, value, label, placeholder, autoFocus, autoCorrect, secureTextEntry, keyboardType, autoCapitalize, onChangeText,style, onSubmitEditing, editable, multiline, numberOfLines};
 
     if (onChange && !onChangeText) {
       props.onChangeText = text => onChange({target: {name, value: text}})
@@ -29,7 +29,6 @@ export class TextInput extends Component {
     if (style) {
       custom_style.push(style);
     }
-
 
     return (
       <View>
