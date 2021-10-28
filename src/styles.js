@@ -60,6 +60,8 @@ function buildOptions() {
       text: "#707070",
       green: GREEN,
       red: PRIMARY
+    },
+    images: {
     }
   }
 }
