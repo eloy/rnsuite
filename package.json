@@ -1,14 +1,13 @@
 {
   "name": "rnsuite",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "React Native components collection",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "react": "17.0.1",
-    "react-native": "0.64.0"
+    "react-native": "0.71.4"
   },
   "author": "",
   "license": "ISC"
