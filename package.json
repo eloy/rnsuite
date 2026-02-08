@@ -1,14 +1,13 @@
 {
   "name": "rnsuite",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "description": "React Native components collection",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "react-native": "0.71.4"
   },
-  "author": "",
+  "author": "Eloy Gomez",
   "license": "ISC"
 }
