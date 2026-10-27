@@ -59,7 +59,7 @@ export class Button extends Component {
     return (
       <View style={btn_styles.content}>
         {this.renderIcon()}
-        <Text style={textStyle}>{text.toUpperCase()}</Text>
+        <Text style={textStyle}>{text}</Text>
       </View>
     )
   }
