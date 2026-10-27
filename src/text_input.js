@@ -24,15 +24,18 @@ export class TextInput extends Component {
       props.onChangeText = text => onChange({target: {name, value: text}})
     }
 
+
     let custom_style = [text_input_styles.input]
+    let color = text_input_styles.input.color;
 
     if (style) {
       custom_style.push(style);
+      if (style.color) color = style.color;
     }
 
     return (
       <View>
-        <ReactNative.TextInput underlineColorAndroid='transparent' {...props}  style={custom_style} ref={el => this.input = el}></ReactNative.TextInput>
+        <ReactNative.TextInput underlineColorAndroid='transparent' {...props}  style={custom_style} ref={el => this.input = el} placeholderTextColor={color}></ReactNative.TextInput>
       </View>
     );
 
@@ -58,7 +61,7 @@ export class PasswordInput extends Component {
 
   render() {
     let {showPassword} = this.state;
-    let {name, value, placeholder, autoFocus, style, onChange, editable} = this.props;
+    let {name, value, placeholder, autoFocus, style, onChange, editable, showPasswordLabel} = this.props;
 
 
     let props = {name, value, placeholder, autoFocus, editable};
@@ -75,7 +78,7 @@ export class PasswordInput extends Component {
       custom_style.push(style);
     }
 
-    let show_password_label = props.showPasswordLabel || 'Show Password';
+    let show_password_label = showPasswordLabel || 'Show Password';
 
     return (
       <View>

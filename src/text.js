@@ -62,11 +62,11 @@ const h3 = StyleSheet.create({
 
 export class Label extends Component {
   render() {
-    let {children} = this.props;
+    let {children, style} = this.props;
     let {colors} = getOpt();
-
+    let {form_styles} = getStyle();
     return(
-      <Text style={{color: colors.secondary, fontSize: 12, marginBottom: 8}}>{children}</Text>
+      <Text style={[form_styles.label, style]}>{children}</Text>
     )
   }
 }
