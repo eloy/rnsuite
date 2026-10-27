@@ -50,7 +50,7 @@ export default class Checkbox extends Component {
           <View style={[checkbox_styles.touchable, style]}>
             {this.renderIcon()}
           </View>
-          <Label>{label}</Label>
+          <Label style={checkbox_styles.options}>{label}</Label>
         </View>
       </TouchableWithoutFeedback>
     );

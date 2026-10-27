@@ -61,7 +61,7 @@ export class PasswordInput extends Component {
 
   render() {
     let {showPassword} = this.state;
-    let {name, value, placeholder, autoFocus, style, onChange, editable} = this.props;
+    let {name, value, placeholder, autoFocus, style, onChange, editable, showPasswordLabel} = this.props;
 
 
     let props = {name, value, placeholder, autoFocus, editable};
@@ -78,7 +78,7 @@ export class PasswordInput extends Component {
       custom_style.push(style);
     }
 
-    let show_password_label = props.showPasswordLabel || 'Show Password';
+    let show_password_label = showPasswordLabel || 'Show Password';
 
     return (
       <View>
